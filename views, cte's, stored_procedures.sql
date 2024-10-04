@@ -5,7 +5,10 @@ select * from ecommerce.INFORMATION_SCHEMA.TABLES;
 select * from sales;
 
 create view sales_view as (
-	select s.userid, s.product_id, p.product_name from sales s inner join product p on s.product_id = p.product_id
+	select s.userid, s.product_id, p.product_name
+	from sales s
+	inner join product p
+	on s.product_id = p.product_id
 	where s.product_id in (1, 2)
 );
 
